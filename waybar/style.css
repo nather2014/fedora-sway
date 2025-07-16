@@ -1,0 +1,18 @@
+* {
+  font-family: JetBrainsMono, monospace;
+  font-size: 12px;
+  background: #1e1e2e;
+  color: #ffffff;
+  border: none;
+  padding: 0 6px;
+}
+
+#workspaces button {
+  padding: 0 8px;
+  color: #888;
+}
+#workspaces button.focused {
+  color: #fff;
+  background: #44475a;
+}
+

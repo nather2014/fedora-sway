@@ -1,0 +1,36 @@
+{
+  "layer": "top",
+  "position": "top",
+  "modules-left": ["sway/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": ["cpu", "memory", "battery"],
+
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true
+  },
+
+  "cpu": {
+    "format": "{usage}%",
+    "interval": 5
+  },
+
+  "memory": {
+    "format": "{used}MB",
+    "interval": 5
+  },
+
+  "battery": {
+    "format": "{capacity}%",
+    "format-charging": "⚡ {capacity}%",
+    "format-icons": ["", "", "", "", ""],
+    "interval": 30
+  },
+
+  "clock": {
+    "format": "{:%a %d %b - %I:%M %p}",
+    "tooltip": false,
+    "interval": 60
+  }
+}
+

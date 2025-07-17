@@ -1,36 +1,78 @@
 {
-  "layer": "top",
   "position": "top",
-  "modules-left": ["sway/workspaces"],
-  "modules-center": ["clock"],
-  "modules-right": ["cpu", "memory", "battery"],
-
-  "sway/workspaces": {
-    "disable-scroll": true,
-    "all-outputs": true
+  "spacing": 0,
+  "height": 0,
+  "reload_style_on_change": true,
+  "layer": "top",
+  "custom/separator": {
+    "format": "::",
+    "interval": "once",
+    "tooltip": false
   },
-
+  "modules-left": [
+    "sway/workspaces",
+    "sway/mode"
+  ],
+  "modules-center": [
+    "sway/window"
+  ],
+  "modules-right": [
+    "tray",
+    "cpu",
+    "custom/separator",
+    "memory",
+    "custom/separator",
+    "battery",
+    "custom/separator",
+    "clock"
+  ],
+  "sway/window": {
+    "max-length": 50
+  },
+  "tray": {
+    "spacing": 10,
+    "tooltip": false
+  },
   "cpu": {
-    "format": "{usage}%",
-    "interval": 5
+    "format": "cpu {usage}%",
+    "interval": 2,
+    "states": {
+      "critical": 90
+    }
   },
-
   "memory": {
-    "format": "{used}MB",
-    "interval": 5
+    "format": "mem {percentage}%",
+    "interval": 2,
+    "states": {
+      "critical": 80
+    }
   },
-
   "battery": {
-    "format": "{capacity}%",
-    "format-charging": "⚡ {capacity}%",
-    "format-icons": ["", "", "", "", ""],
-    "interval": 30
+    "format": "bat {capacity}%",
+    "interval": 5,
+    "states": {
+      "warning": 20,
+      "critical": 10
+    },
+    "tooltip": false
   },
-
+  "network": {
+    "format-wifi": "wifi {bandwidthDownBits}",
+    "format-ethernet": "enth {bandwidthDownBits}",
+    "format-disconnected": "no network",
+    "interval": 5,
+    "tooltip": false
+  },
+  "pulseaudio": {
+    "scroll-step": 5,
+    "max-volume": 150,
+    "format": "vol {volume}%",
+    "format-bluetooth": "vol {volume}%",
+    "nospacing": 1,
+    "on-click": "pavucontrol",
+    "tooltip": false
+  },
   "clock": {
-    "format": "{:%a %d %b - %I:%M %p}",
-    "tooltip": false,
-    "interval": 60
+    "format": "{:%a %d %b  %H:%M:%S}"
   }
 }
-
